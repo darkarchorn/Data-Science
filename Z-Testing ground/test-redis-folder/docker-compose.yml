@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis:
+    image: redis:latest
+
+  app:
+    build: .   # Uses the Dockerfile in current folder
+    ports:
+      - "8080:5000"   # Expose Flask port 5000 as host port 8080
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis

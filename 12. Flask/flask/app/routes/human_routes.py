@@ -1,11 +1,11 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from app.controllers import human_controller
 
-human_bp = Blueprint("human_bp", __name__)
+human_bp = Blueprint("human_bp", __name__, template_folder="../views/templates")
 
 @human_bp.route("/")
 def welcome():
-    return "Welcome to my homepage"
+    return render_template("home.html")
 
 @human_bp.route("/add", methods=["POST"])
 def add():
