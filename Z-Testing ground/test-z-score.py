@@ -1,14 +1,3 @@
-import numpy as np
-import random
+nums = [1,3,2,2,5,2,3,7]
 
-arr = [random.randint(1,10) for _ in range(10)]
-print(arr)
-
-print(np.mean(arr))
-print(np.var(arr))
-
-arr2 = [(i - np.mean(arr))/np.std(arr) for i in arr]
-print(arr2)
-
-print(np.mean(arr2))
-print(np.var(arr2))
+print(dict(nums))
